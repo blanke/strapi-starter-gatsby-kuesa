@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	>
+
+<channel>
+	<title>Kirsi Sutherland &#8211; Kuesa 3D</title>
+	<atom:link href="https://www.kuesa.com/author/kirsi/feed/" rel="self" type="application/rss+xml" />
+	<link>https://www.kuesa.com</link>
+	<description>Boost your 3D design-to-code workflow</description>
+	<lastBuildDate>Mon, 15 Feb 2021 15:49:35 +0000</lastBuildDate>
+	<language>en-US</language>
+	<sy:updatePeriod>
+	hourly	</sy:updatePeriod>
+	<sy:updateFrequency>
+	1	</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=5.7</generator>
+
+<image>
+	<url>https://www.kuesa.com/wp-content/uploads/2020/12/cropped-icon-32x32.png</url>
+	<title>Kirsi Sutherland &#8211; Kuesa 3D</title>
+	<link>https://www.kuesa.com</link>
+	<width>32</width>
+	<height>32</height>
+</image> 
+	<item>
+		<title>3D &#8211; Interactions with Qt, KUESA and Qt Design Studio, Part 2</title>
+		<link>https://www.kuesa.com/3d-interactions-with-qt-kuesa-and-qt-design-studio-part-2/</link>
+					<comments>https://www.kuesa.com/3d-interactions-with-qt-kuesa-and-qt-design-studio-part-2/#respond</comments>
+		
+		<dc:creator><![CDATA[Kirsi Sutherland]]></dc:creator>
+		<pubDate>Fri, 26 Jul 2019 14:33:26 +0000</pubDate>
+				<category><![CDATA[Blogs]]></category>
+		<category><![CDATA[Designers]]></category>
+		<guid isPermaLink="false">https://www.kuesa.com/?p=536</guid>
+
+					<description><![CDATA[<p>In my last post, I went through a method of creating a simulated reflection with a simple scene. This time I&#8217;d like to take the technique and apply it to something a bit more realistic. I have a model of [&#8230;]</p>
+<p>The post <a rel="nofollow" href="https://www.kuesa.com/3d-interactions-with-qt-kuesa-and-qt-design-studio-part-2/">3D &#8211; Interactions with Qt, KUESA and Qt Design Studio, Part 2</a> appeared first on <a rel="nofollow" href="https://www.kuesa.com">Kuesa 3D</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[<p>In my <a href="https://www.kdab.com/3d-interactions-with-qt-kuesa-and-qt-design-studio-part-1/">last post</a>, I went through a method of creating a simulated reflection with a simple scene. This time I&#8217;d like to take the technique and apply it to something a bit more realistic. I have a model of a car that I&#8217;d like to show off in <a href="https://www.kdab.com/kuesa/">KUESA<img src="https://s.w.org/images/core/emoji/13.0.1/72x72/2122.png" alt="™" class="wp-smiley" style="height: 1em; max-height: 1em;" /></a>, and as we know, KUESA doesn&#8217;t render reflections.</p>
+<p><a href="https://www.kdab.com/wp-content/uploads/stories/01-car_with_reflection.jpg"><img class="aligncenter size-full wp-image-20883 flt-cent" src="https://www.kdab.com/wp-content/uploads/stories/01-car_with_reflection.jpg" alt="" width="700" /></a></p>
+<p>Using the method discussed last time, I&#8217;d need to create an exact mirror of the object and duplicate it below the original, and have a floor that was partially transparent. This would be expensive to render if I duplicated every single mesh on the high poly model. Here, the model is X triangles &#8211; duplicating it would result in Y triangles &#8211; is it really worth it for a reflection?</p>
+<p>However, if I could take a low poly version of the mesh and make it look like the high poly mesh this could then work. I could bake the materials onto a low poly mesh. Easy to do in blender</p>
+<p><a href="https://www.kdab.com/wp-content/uploads/stories/02-detailed_fake_reflection.jpg"><img class="aligncenter size-full wp-image-20884 flt-cent" src="https://www.kdab.com/wp-content/uploads/stories/02-detailed_fake_reflection.jpg" alt="" width="700" /></a></p>
+<p>Here I have a low poly object as the created reflection, with the baked materials giving the impression of much higher detail than physically exists. Using the same technique of applying an image texture as an alpha channel, I can fade out the mesh below to look more like a reflection.</p>
+<p><a href="https://www.kdab.com/wp-content/uploads/stories/03-detailed_alphaed_reflection.jpg"><img class="aligncenter size-full wp-image-20885 flt-cent" src="https://www.kdab.com/wp-content/uploads/stories/03-detailed_alphaed_reflection.jpg" alt="" width="700" /></a></p>
+<p>To further the illusion, I can also blur the details on the baked materials &#8211; this, along with the rough texture of the plane, gives more of a reflective look, especially when you consider that a rough plane would not give an exact reflection</p>
+<p><a href="https://www.kdab.com/wp-content/uploads/stories/04-car_cheap_reflection.jpg"><img class="aligncenter size-full wp-image-20886 flt-cent" src="https://www.kdab.com/wp-content/uploads/stories/04-car_cheap_reflection.jpg" alt="" width="700" /></a></p>
+<p>The good news is, it produces an effect similar to a reflection, which is what we want.</p>
+<p>This is all very well for a static model, but how can I deal with an object that has animations, such as a car door opening? I&#8217;ll look into this in the next post</p>
+<p>The post <a rel="nofollow" href="https://www.kuesa.com/3d-interactions-with-qt-kuesa-and-qt-design-studio-part-2/">3D &#8211; Interactions with Qt, KUESA and Qt Design Studio, Part 2</a> appeared first on <a rel="nofollow" href="https://www.kuesa.com">Kuesa 3D</a>.</p>
+]]></content:encoded>
+					
+					<wfw:commentRss>https://www.kuesa.com/3d-interactions-with-qt-kuesa-and-qt-design-studio-part-2/feed/</wfw:commentRss>
+			<slash:comments>0</slash:comments>
+		
+		
+			</item>
+		<item>
+		<title>3D &#8211; Interactions with Qt, KUESA and Qt Design Studio, Part 1</title>
+		<link>https://www.kuesa.com/3d-interactions-with-qt-kuesa-and-qt-design-studio-part-1/</link>
+					<comments>https://www.kuesa.com/3d-interactions-with-qt-kuesa-and-qt-design-studio-part-1/#respond</comments>
+		
+		<dc:creator><![CDATA[Kirsi Sutherland]]></dc:creator>
+		<pubDate>Fri, 21 Jun 2019 14:27:38 +0000</pubDate>
+				<category><![CDATA[Blogs]]></category>
+		<category><![CDATA[Designers]]></category>
+		<guid isPermaLink="false">https://www.kuesa.com/?p=533</guid>
+
+					<description><![CDATA[<p>This is the first in a series of blog posts about 3D and the interaction with Qt, KUESA™ and Qt 3D Studio, and other things that pop up when we&#8217;re working on something. I&#8217;m a 3D designer, mostly working in blender. [&#8230;]</p>
+<p>The post <a rel="nofollow" href="https://www.kuesa.com/3d-interactions-with-qt-kuesa-and-qt-design-studio-part-1/">3D &#8211; Interactions with Qt, KUESA and Qt Design Studio, Part 1</a> appeared first on <a rel="nofollow" href="https://www.kuesa.com">Kuesa 3D</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[<p class="p1"><span class="s1">This is the first in a series of blog posts about 3D and the interaction with Qt, <a href="https://www.kdab.com/kuesa/">KUESA<img src="https://s.w.org/images/core/emoji/13.0.1/72x72/2122.png" alt="™" class="wp-smiley" style="height: 1em; max-height: 1em;" /></a> and <a href="https://blog.qt.io/blog/2019/04/01/qt-3d-studio-2-3-released/">Qt 3D Studio</a>, and other things that pop up when we&#8217;re working on something. </span></p>
+<p class="p1"><span class="s1">I&#8217;m a 3D designer, mostly working in blender. Sometimes I come across interesting problems and I&#8217;ll try to share those here. For example, trying to display things on low-end hardware &#8211; where memory is sometimes limited, meaning every polygon and triangle counts;<span class="Apple-converted-space">  </span>where the renderer doesn&#8217;t do what the designer wants it to, that sort of thing. </span><span class="s1">The problem that I&#8217;ll cover today is, how to easily create a reflection in KUESA or Qt 3D Studio. </span></p>
+<p class="p1"><span class="s1">Neither KUESA or Qt 3D Studio will give you free reflections. If you know a little about 3D, you know that requires ray tracing software, not OpenGL. </span><span class="s1">So, I wondered if there would be an easy way to create this effect. I mean, all that a reflection is, is a mirror of an object projected onto a plane, right? So, I wondered, could this be imitated?</span></p>
+<p class="p1"><span class="s1"><img class="aligncenter thumbnail flt-cent" src="https://www.kdab.com/wp-content/uploads/stories/01-simple_scene.png" alt="" width="700" align="middle" /></span></p>
+<p class="p1"><span class="s1">To recreate this, I&#8217;d need to create an exact mirror of the object and duplicate it below the original, and have a floor that is partially transparent. I&#8217;ve created a simple scene to show you how this technique works &#8211; a scene with two cubes, a ground plane and a point light.</span></p>
+<p class="p1"><span class="s1"> </span></p>
+<p class="p1"><span class="s1">Here&#8217;s the result of this scene. It&#8217;s starting to look like <em>something</em>, but I want to compare it to a &#8216;real&#8217; reflection.</span></p>
+<p class="p1"><span class="s1"><img loading="lazy" class="thumbnail flt-cent aligncenter" src="https://www.kdab.com/wp-content/uploads/stories/03-rough_true" alt="" width="300" height="169" /></span><span class="s1">For comparison, the above is a cube on a reflective, rough surface &#8211; showing the result using raytracing. You can see here the reflection is different from our example above &#8211; the main issue is that the reflection eventually fades out the further away it gets from the contact point. </span></p>
+<p class="p1"><span class="s1">How to resolve this? This can be mimicked by creating an image texture for the alpha that fades out the model towards the top (or rather the bottom) of the reflection. I can also further enhance the illusion by ensuring that the floor is rough &#8211; allowing the texture of the surface to assist the illusion of a reflection. </span></p>
+<p class="p1"><span class="s1"><img loading="lazy" class="thumbnail flt-cent aligncenter" src="https://www.kdab.com/wp-content/uploads/stories/02-without_alpha.png" alt="" width="300" height="169" align="centre" /></span></p>
+<p class="p1"><span class="s1">Another difference between the shots is the blurriness on the edge of the mesh &#8211; this could be approximated by creating duplicates of the mesh and for each one, increasing the size and reducing the opacity. Depending on the complexity of the model, this may add too many polygons to render, while only adding a subtle effect. </span></p>
+<p class="p1"><span class="s1"><img loading="lazy" class="thumbnail flt-cent aligncenter" src="https://www.kdab.com/wp-content/uploads/stories/04-simple_cheap_reflection.png" alt="" width="300" height="169" /></span></p>
+<p class="p1"><span class="s1">So, given that this is a very simple example and not one that would translate well to something that a client might ask for, how can I translate this into a more complex model, such as the car below? I&#8217;ll chat about that in <a href="https://www.kdab.com/3d-interactions-with-qt-kuesa-and-qt-design-studio-part-2/">the next post</a>.</span></p>
+<p class="p1"><span class="s1"><br />
+<img loading="lazy" class="thumbnail flt-cent aligncenter" src="https://www.kdab.com/wp-content/uploads/stories/05-car_with_reflection.png" alt="" width="300" height="169" /></span></p>
+<p>The post <a rel="nofollow" href="https://www.kuesa.com/3d-interactions-with-qt-kuesa-and-qt-design-studio-part-1/">3D &#8211; Interactions with Qt, KUESA and Qt Design Studio, Part 1</a> appeared first on <a rel="nofollow" href="https://www.kuesa.com">Kuesa 3D</a>.</p>
+]]></content:encoded>
+					
+					<wfw:commentRss>https://www.kuesa.com/3d-interactions-with-qt-kuesa-and-qt-design-studio-part-1/feed/</wfw:commentRss>
+			<slash:comments>0</slash:comments>
+		
+		
+			</item>
+	</channel>
+</rss>

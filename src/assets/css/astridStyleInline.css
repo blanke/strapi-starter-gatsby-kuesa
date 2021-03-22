@@ -1,0 +1,18 @@
+.site-header {position: fixed;}
+.site-title a,.site-title a:hover { color:#ffffff}
+.site-description { color:#BDBDBD}
+.site-header,.site-header.header-scrolled { background-color:rgba(32,37,41,0.9)}
+@media only screen and (max-width: 1024px) { .site-header.has-header,.site-header.has-video,.site-header.has-single,.site-header.has-shortcode { background-color:rgba(32,37,41,0.9)} }
+body, .widget-area .widget, .widget-area .widget a { color:#656D6D}
+.footer-widgets, .site-footer, .footer-info { background-color:#202529}
+body {font-family: 'Open Sans', sans-serif;color:red;}
+h1, h2, h3, h4, h5, h6, .fact .fact-number, .fact .fact-name, .site-title {font-family: 'Open Sans', sans-serif;}
+.site-title { font-size:36px; }
+.site-description { font-size:14px; }
+h1 { font-size:36px; }
+h2 { font-size:30px; }
+h3 { font-size:24px; }
+h4 { font-size:16px; }
+h5 { font-size:14px; }
+h6 { font-size:12px; }
+body { font-size:14px; }
