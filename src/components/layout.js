@@ -9,13 +9,10 @@ const Layout = ({ children, seo }) => (
   <StaticQuery
     query={graphql`
       query {
-        strapiHomepage {
-          seo {
-            metaTitle
-            metaDescription
-            shareImage {
-              publicURL
-            }
+        strapiSite {
+          baseUrl
+          homepage {
+            id
           }
         }
       }

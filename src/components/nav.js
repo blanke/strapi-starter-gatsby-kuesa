@@ -5,15 +5,10 @@ const Nav = () => (
   <StaticQuery
     query={graphql`
       query {
-        strapiGlobal {
-          siteName
-        }
-        allStrapiCategory {
-          edges {
-            node {
-              slug
-              name
-            }
+        strapiSite {
+          baseUrl
+          homepage {
+            id
           }
         }
       }
@@ -39,8 +34,8 @@ const Nav = () => (
               <div uk-dropdown="animation: uk-animation-slide-top-small; duration: 1000">
                 <ul className="uk-nav uk-dropdown-nav">
                   {data.allStrapiCategory.edges.map((category, i) => (
-                    <li key={`category__${category.node.slug}`}>
-                      <Link to={`/category/${category.node.slug}`}>
+                    <li key={`category__${category.node}`}>
+                      <Link to={`/category/${category.node}`}>
                         {category.node.name}
                       </Link>
                     </li>

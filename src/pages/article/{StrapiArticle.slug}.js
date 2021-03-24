@@ -6,30 +6,17 @@ import Layout from "../../components/layout";
 import Markdown from "react-markdown";
 
 export const query = graphql`
-  query ArticleQuery($slug: String!) {
-    strapiArticle(slug: { eq: $slug }, status: { eq: "published" }) {
+  query ArticleQuery($title: String!) {
+    strapiArticle(title: { eq: $title }, status: { eq: "published" }) {
       strapiId
       title
       description
-      content
       publishedAt
       image {
         publicURL
-        childImageSharp {
-          fixed {
-            src
-          }
-        }
       }
       author {
         name
-        picture {
-          childImageSharp {
-            fixed(width: 30, height: 30) {
-              src
-            }
-          }
-        }
       }
     }
   }
@@ -50,8 +37,8 @@ const Article = ({ data }) => {
         <div
           id="banner"
           className="uk-height-medium uk-flex uk-flex-center uk-flex-middle uk-background-cover uk-light uk-padding uk-margin"
-          data-src={article.image.publicURL}
-          data-srcset={article.image.publicURL}
+          data-src={article.image}
+          data-srcset={article.image}
           data-uk-img
         >
           <h1>{article.title}</h1>
@@ -59,19 +46,10 @@ const Article = ({ data }) => {
 
         <div className="uk-section">
           <div className="uk-container uk-container-small">
-            <Markdown source={article.content} escapeHtml={false} />
 
             <hr className="uk-divider-small" />
 
             <div className="uk-grid-small uk-flex-left" data-uk-grid="true">
-              <div>
-                {article.author.picture && (
-                  <Img
-                    fixed={article.author.picture.childImageSharp.fixed}
-                    imgStyle={{ position: "static", borderRadius: "50%" }}
-                  />
-                )}
-              </div>
               <div className="uk-width-expand">
                 <p className="uk-margin-remove-bottom">
                   By {article.author.name}
