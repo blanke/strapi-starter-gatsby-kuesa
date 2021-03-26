@@ -30,7 +30,12 @@ npx create-strapi-app backend --template https://github.com/blanke/strapi-templa
 
 The Strapi server will automatically start and import sample seed data.
 
+##### is static html for kuesa.com possible?
+Tested with https://amazing-allen-c666b1.netlify.app
+
 ### Frontend
+
+![templating mechanism](templating mechanism.png)
 
 Leave the Strapi backend running in the background. Open another terminal tab, and make sure you're in the `frontend` directory:
 
