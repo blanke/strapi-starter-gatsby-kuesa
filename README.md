@@ -35,7 +35,7 @@ Tested with https://amazing-allen-c666b1.netlify.app
 
 ### Frontend
 
-![templating mechanism](templating mechanism.png)
+![templating mechanism](templatingMechanism.png)
 
 Leave the Strapi backend running in the background. Open another terminal tab, and make sure you're in the `frontend` directory:
 
