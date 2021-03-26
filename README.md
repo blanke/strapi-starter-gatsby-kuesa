@@ -2,40 +2,30 @@
 
 Gatsby starter for creating Kuesa with Strapi.
 
-![screenshot image](/screenshot.png)
+![screenshot image](screenshot.png)
 
 This starter allows you to try Strapi with Gatsby with the example of Kuesa. It is fully customizable and due to the fact that it is open source, fully open to contributions. So do not hesitate to add new features and report bugs!
-
-## Features
-
-- 2 Content types: Article, Category
-- 2 Created articles
-- 3 Created categories
-- Responsive design using UIkit
-- SEO and social media friendly
 
 Pages:
 
 - "/" to display every articles
-- "/article/:id" to display one article
-- "/category/:id" display articles depending on the category
 
 ## Getting started
 
 The easiest way to try this starter is to run it locally on your computer.
 
-First, you'll need to create your own copy of this starter. You can do so by clicking [the "Use this template" button](https://github.com/strapi/strapi-starter-gatsby-blog/generate) on GitHub, and filling the [form](https://docs.github.com/en/github/creating-cloning-and-archiving-repositories/creating-a-repository-from-a-template)
+First, you'll need to create your own copy of this starter. You can do so by clicking [the "Use this template" button](https://github.com/blanke/strapi-starter-gatsby-kuesa) on GitHub, and filling the [form](https://docs.github.com/en/github/creating-cloning-and-archiving-repositories/creating-a-repository-from-a-template)
 
 ### Backend
 
-Create a Strapi project named `backend` using the [blog template](https://github.com/strapi/strapi-template-blog):
+Create a Strapi project named `backend` using the [blog template](https://github.com/blanke/strapi-template-kuesa):
 
 ```
 # Using Yarn
-yarn create strapi-app backend --template https://github.com/strapi/strapi-template-blog
+yarn create strapi-app backend --template https://github.com/blanke/strapi-template-kuesa
 
 # Or using NPM
-npx create-strapi-app backend --template https://github.com/strapi/strapi-template-blog
+npx create-strapi-app backend --template https://github.com/blanke/strapi-template-kuesa
 ```
 
 The Strapi server will automatically start and import sample seed data.
