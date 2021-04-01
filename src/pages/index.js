@@ -24,7 +24,6 @@ const query = graphql`
       homepage {
         id
         title
-        description
       }
     }
     allStrapiBlogBoard {

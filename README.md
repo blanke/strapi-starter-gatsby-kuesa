@@ -18,7 +18,7 @@ First, you'll need to create your own copy of this starter. You can do so by cli
 
 ### Backend
 
-Create a Strapi project named `backend` using the [blog template](https://github.com/blanke/strapi-template-kuesa):
+Create a Strapi project named `backend` using the [kuesa template](https://github.com/blanke/strapi-template-kuesa):
 
 ```
 # Using Yarn
