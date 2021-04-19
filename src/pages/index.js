@@ -11,7 +11,7 @@ const IndexPage = () => {
 
   return (
     <Layout seo={data.strapiSite.homepage.id}>
-        <PageIntro article={data.strapiSite.homepage} />
+        <PageIntro title={"Posts in Category: " + data.strapiSite.blog_board.name}/>
         <ArticlesComponent articles={data.allStrapiArticle.edges} />
     </Layout>
   );
@@ -24,6 +24,10 @@ const query = graphql`
       homepage {
         id
         title
+      }
+      blog_board {
+        id
+        name
       }
     }
     allStrapiBlogBoard {

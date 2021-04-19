@@ -1,7 +1,8 @@
 import React from "react";
 import PropTypes from "prop-types";
 import { StaticQuery, graphql } from "gatsby";
-import Nav from "./nav";
+import NavTop from "./navTop";
+import NavBottom from "./navBottom";
 import Seo from "./seo";
 import { Helmet } from "react-helmet";
 
@@ -35,12 +36,8 @@ const Layout = ({ children, seo }) => (
             <link rel='stylesheet' id='astrid-style-custom-css'  href='/wp-content/themes/astrid-child/style.css@ver=1615963932.css' type='text/css' media='all' />
 
             <script type='text/javascript' src='/wp-includes/js/jquery/jquery.min.js' id='jquery-core-js'></script>
-            <script type='text/javascript' src='/wp-includes/js/jquery/jquery-migrate.min.js' id='jquery-migrate-js'></script>
-            <script type='text/javascript' src='/wp-content/plugins/email-encoder-bundle/core/includes/assets/js/custom.js' id='eeb-js-frontend-js'></script>
-            <script type='text/javascript' src='/wp-content/themes/astrid-child/js/rellax/rellax.min.js' id='astrid-child-parallaxscripts-js'></script>
         </Helmet>
         <Seo seo={seo} />
-          {/*<Nav />*/}
         <main>
 
             <div className="preloader" style={{display:"none"}}>
@@ -69,41 +66,7 @@ const Layout = ({ children, seo }) => (
                                 srcSet="/wp-content/uploads/2020/11/cropped-kuesaLogo.png 200w, /wp-content/uploads/2020/11/cropped-kuesaLogo-100x33.png 100w"
                                 sizes="(max-width: 200px) 100vw, 200px"/></a></div>
                         <div className="btn-menu col-md-8 col-sm-6 col-xs-12"><i className="fa fa-navicon"></i></div>
-                        <nav id="mainnav" className="main-navigation col-md-8 col-sm-6 col-xs-12" role="navigation">
-                            <div className="menu-mainmenu-container">
-                                <ul id="primary-menu" className="menu">
-                                    <li id="menu-item-84"
-                                        className="menu-item menu-item-type-post_type menu-item-object-page menu-item-84">
-                                        <a href="index.html@p=76">For Designers</a></li>
-                                    <li id="menu-item-83"
-                                        className="menu-item menu-item-type-post_type menu-item-object-page menu-item-83">
-                                        <a href="index.html@p=78">For Developers</a></li>
-                                    <li id="menu-item-82"
-                                        className="menu-item menu-item-type-post_type menu-item-object-page menu-item-82">
-                                        <a href="index.html@p=80">For Teams</a></li>
-                                    <li id="menu-item-551"
-                                        className="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-551">
-                                        <a href="index.html#">Resources</a>
-                                        <ul className="sub-menu">
-                                            <li id="menu-item-552"
-                                                className="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-552">
-                                                <a href="category/blogs/index.html">Blogs</a></li>
-                                            <li id="menu-item-268"
-                                                className="menu-item menu-item-type-post_type menu-item-object-page menu-item-268">
-                                                <a href="index.html@p=198">Licensing</a></li>
-                                            <li id="menu-item-577"
-                                                className="menu-item menu-item-type-custom menu-item-object-custom menu-item-577">
-                                                <a href="/wp-content/uploads/2021/02/Kuesa-brochure-1b.pdf">Brochure</a>
-                                            </li>
-                                        </ul>
-                                    </li>
-                                    <li id="menu-item-193"
-                                        className="menu-item menu-item-type-post_type menu-item-object-page menu-item-193">
-                                        <a href="index.html@p=190">Contact</a></li>
-                                </ul>
-                            </div>
-                        </nav>
-
+                        <NavTop/>
                     </div>
                 </header>
 
@@ -139,25 +102,7 @@ const Layout = ({ children, seo }) => (
                             <div className="footer-branding"><a href="index.html" title="Kuesa 3D"><img
                                 className="footer-logo" src="/wp-content/uploads/2020/12/kuesa-logo_registered_white.png"
                                 alt="Kuesa 3D"/></a></div>
-                            <div className="menu-footermenu-container">
-                                <ul id="footer-menu" className="menu">
-                                    <li id="menu-item-527"
-                                        className="menu-item menu-item-type-post_type menu-item-object-page menu-item-527">
-                                        <a href="index.html@p=76">For Designers</a></li>
-                                    <li id="menu-item-526"
-                                        className="menu-item menu-item-type-post_type menu-item-object-page menu-item-526">
-                                        <a href="index.html@p=78">For Developers</a></li>
-                                    <li id="menu-item-525"
-                                        className="menu-item menu-item-type-post_type menu-item-object-page menu-item-525">
-                                        <a href="index.html@p=80">For Teams</a></li>
-                                    <li id="menu-item-523"
-                                        className="menu-item menu-item-type-post_type menu-item-object-page menu-item-523">
-                                        <a href="index.html@p=198">Licensing</a></li>
-                                    <li id="menu-item-524"
-                                        className="menu-item menu-item-type-post_type menu-item-object-page menu-item-524">
-                                        <a href="index.html@p=190">Contact Us</a></li>
-                                </ul>
-                            </div>
+                            <NavBottom/>
                         </nav>
                         {/* site-navigation */}
 
@@ -166,11 +111,11 @@ const Layout = ({ children, seo }) => (
 
                     <div className="createdBy ">
                         <div className="innerCreatedBy sidePaddingHalf">
-                            <a className="soc-twitter" href="https://twitter.com/Kuesa3D" target="_blank" rel="noreferrer"></a>
+                            <a className="soc-twitter" href="https://twitter.com/Kuesa3D" target="_blank" rel="noreferrer">&nbsp;</a>
                         </div>
                         <div className="innerCreatedBy sidePaddingHalf">
                             <a className="soc-linkedin" href="https://www.linkedin.com/showcase/kuesa-3d/"
-                               target="_blank" rel="noreferrer"></a>
+                               target="_blank" rel="noreferrer">&nbsp;</a>
                         </div>
                         <div className="innerCreatedBy sidePaddingHalf">
                             Follow Us:
@@ -185,6 +130,9 @@ const Layout = ({ children, seo }) => (
                 </footer>
                 {/* #colophon */}
             </div>
+            <script type='text/javascript' src='/wp-includes/js/jquery/jquery-migrate.min.js' id='jquery-migrate-js'></script>
+            <script type='text/javascript' src='/wp-content/plugins/email-encoder-bundle/core/includes/assets/js/custom.js' id='eeb-js-frontend-js'></script>
+            <script type='text/javascript' src='/wp-content/themes/astrid-child/js/rellax/rellax.min.js' id='astrid-child-parallaxscripts-js'></script>
             <script type='text/javascript' src='/wp-includes/js/dist/vendor/wp-polyfill.min.js' id='wp-polyfill-js'></script>
             <script type='text/javascript' src='/wp-includes/js/dist/hooks.min.js' id='wp-hooks-js'></script>
             <script type='text/javascript' src='/wp-includes/js/dist/i18n.min.js' id='wp-i18n-js'></script>

@@ -16,9 +16,9 @@ module.exports = {
       resolve: "gatsby-source-strapi",
       options: {
         apiURL: process.env.API_URL || "http://localhost:1337",
-        contentTypes: ["article", "writer", "blog-board"],
-        singleTypes: [`site`],
-        queryLimit: 1000,
+        contentTypes: ["article", "article-item", "blog-board", "navigation", "page", "teaser", "writer" ],
+        singleTypes: ["site"],
+        queryLimit: 1000
       },
     },
     "gatsby-transformer-sharp",
