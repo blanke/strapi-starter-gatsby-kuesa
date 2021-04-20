@@ -21,21 +21,28 @@ const Layout = ({ children, seo }) => (
     render={(data) => (
       <>
         <Helmet>
-            <link rel='stylesheet' id='sby_styles-css'  href='/wp-content/plugins/youtube-feed-pro/css/sb-youtube.min.css@ver=1.2.2.css' type='text/css' media='all' />
             <link rel='stylesheet' id='bootstrap-css'  href='/wp-content/themes/astrid/css/bootstrap/bootstrap.min.css@ver=1.css' type='text/css' media='all' />
-            <link rel='stylesheet' id='wp-block-library-css'  href='/wp-includes/css/dist/block-library/style.min.css@ver=5.7.css' type='text/css' media='all' />
-            <link rel='stylesheet' id='contact-form-7-css'  href='/wp-content/plugins/contact-form-7/includes/css/styles.css@ver=5.4.css' type='text/css' media='all' />
-            <link rel='stylesheet' id='ctf_styles-css'  href='/wp-content/plugins/custom-twitter-feeds-pro/css/ctf-styles.min.css@ver=1.12.1.css' type='text/css' media='all' />
-            <link rel='stylesheet' id='eeb-css-frontend-css'  href='/wp-content/plugins/email-encoder-bundle/core/includes/assets/css/style.css@ver=201216-104935.css' type='text/css' media='all' />
-            <link rel='stylesheet' id='foobox-free-min-css'  href='/wp-content/plugins/foobox-image-lightbox/free/css/foobox.free.min.css@ver=2.7.16.css' type='text/css' media='all' />
             <link rel='stylesheet' id='astrid-style-css'  href='/wp-content/themes/astrid-child/style.css@ver=5.7.css' type='text/css' media='all' />
+            <link rel='stylesheet' id='astrid-style-inline-css'  href='/css/astridStyleInline.css' type='text/css' media='all' />
             <link rel='stylesheet' id='astrid-body-fonts-css'  href='https://fonts.googleapis.com/css?family=Open+Sans%3A300%2C300italic%2C600%2C600italic&amp;ver=5.7' type='text/css' media='all' />
             <link rel='stylesheet' id='astrid-headings-fonts-css'  href='https://fonts.googleapis.com/css?family=Open+Sans%3A300%2C300italic&amp;ver=5.7' type='text/css' media='all' />
             <link rel='stylesheet' id='font-awesome-css'  href='/wp-content/themes/astrid/fonts/font-awesome.min.css@ver=5.7.css' type='text/css' media='all' />
             <link rel='stylesheet' id='astrid-css' href='/wp-content/themes/astrid/style.css@ver=5.7.css' type='text/css' media='all' />
             <link rel='stylesheet' id='astrid-style-custom-css'  href='/wp-content/themes/astrid-child/style.css@ver=1615963932.css' type='text/css' media='all' />
-
             <script type='text/javascript' src='/wp-includes/js/jquery/jquery.min.js' id='jquery-core-js'></script>
+            <script type='text/javascript' src='/wp-content/themes/astrid-child/js/rellax/rellax.min.js' id='astrid-child-parallaxscripts-js'></script>
+            <script type="text/javascript">
+                {`
+                    function appendAsync(src) {
+                        const script = document.createElement("script");
+                        script.src = src;
+                        script.async = true;
+                        document.body.appendChild(script);
+                    }
+                    appendAsync("/wp-content/themes/astrid/js/main.js");
+                    appendAsync("/wp-content/themes/astrid/js/scripts.min.js");
+                `}
+            </script>
         </Helmet>
         <Seo seo={seo} />
         <main>
@@ -130,25 +137,6 @@ const Layout = ({ children, seo }) => (
                 </footer>
                 {/* #colophon */}
             </div>
-            <script type='text/javascript' src='/wp-includes/js/jquery/jquery-migrate.min.js' id='jquery-migrate-js'></script>
-            <script type='text/javascript' src='/wp-content/plugins/email-encoder-bundle/core/includes/assets/js/custom.js' id='eeb-js-frontend-js'></script>
-            <script type='text/javascript' src='/wp-content/themes/astrid-child/js/rellax/rellax.min.js' id='astrid-child-parallaxscripts-js'></script>
-            <script type='text/javascript' src='/wp-includes/js/dist/vendor/wp-polyfill.min.js' id='wp-polyfill-js'></script>
-            <script type='text/javascript' src='/wp-includes/js/dist/hooks.min.js' id='wp-hooks-js'></script>
-            <script type='text/javascript' src='/wp-includes/js/dist/i18n.min.js' id='wp-i18n-js'></script>
-            <script type='text/javascript' src='/wp-includes/js/dist/vendor/lodash.min.js' id='lodash-js'></script>
-            <script type='text/javascript' src='/wp-includes/js/dist/url.min.js' id='wp-url-js'></script>
-            <script type='text/javascript' src='/wp-includes/js/dist/api-fetch.min.js' id='wp-api-fetch-js'></script>
-            <script type='text/javascript' src='/wp-content/plugins/contact-form-7/includes/js/index.js' id='contact-form-7-js'></script>
-            <script type='text/javascript' src='/wp-content/plugins/email-encoder-bundle/core/includes/assets/js/encoder-form.js' id='eeb-js-ajax-ef-js'></script>
-            <script type='text/javascript' src='/wp-content/themes/astrid/js/main.js' id='astrid-main-js'></script>
-            <script type='text/javascript' src='/wp-content/themes/astrid/js/scripts.min.js' id='astrid-scripts-js'></script>
-            <script type='text/javascript' src='/wp-includes/js/wp-embed.min.js' id='wp-embed-js'></script>
-            <script type='text/javascript' src='/wp-includes/js/dist/dom-ready.min.js' id='wp-dom-ready-js'></script>
-            <script type='text/javascript' src='/wp-includes/js/dist/a11y.min.js' id='wp-a11y-js'></script>
-            <script type='text/javascript' src='/wp-includes/js/wp-custom-header.min.js' id='wp-custom-header-js'></script>
-            <script type='text/javascript' src='/wp-content/plugins/custom-twitter-feeds-pro/js/ctf-scripts-1-10.min.js' id='ctf_scripts-js'></script>
-
         </main>
       </>
     )}

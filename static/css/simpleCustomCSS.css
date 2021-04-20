@@ -1,0 +1,12 @@
+.flrt {
+	float: right;
+	margin-left: 15px;
+}
+
+.fllt {
+	float: left;
+}
+
+.flt-cent {
+	margin:0 auto;
+}
