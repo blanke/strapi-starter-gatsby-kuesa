@@ -22,8 +22,6 @@ const Layout = ({ children, seo }) => (
       <>
         <Helmet>
             <link rel='stylesheet' id='bootstrap-css'  href='/wp-content/themes/astrid/css/bootstrap/bootstrap.min.css@ver=1.css' type='text/css' media='all' />
-            <link rel='stylesheet' id='astrid-style-css'  href='/wp-content/themes/astrid-child/style.css@ver=5.7.css' type='text/css' media='all' />
-            <link rel='stylesheet' id='astrid-style-inline-css'  href='/css/astridStyleInline.css' type='text/css' media='all' />
             <link rel='stylesheet' id='astrid-body-fonts-css'  href='https://fonts.googleapis.com/css?family=Open+Sans%3A300%2C300italic%2C600%2C600italic&amp;ver=5.7' type='text/css' media='all' />
             <link rel='stylesheet' id='astrid-headings-fonts-css'  href='https://fonts.googleapis.com/css?family=Open+Sans%3A300%2C300italic&amp;ver=5.7' type='text/css' media='all' />
             <link rel='stylesheet' id='font-awesome-css'  href='/wp-content/themes/astrid/fonts/font-awesome.min.css@ver=5.7.css' type='text/css' media='all' />
@@ -31,6 +29,21 @@ const Layout = ({ children, seo }) => (
             <link rel='stylesheet' id='astrid-style-custom-css'  href='/wp-content/themes/astrid-child/style.css@ver=1615963932.css' type='text/css' media='all' />
             <script type='text/javascript' src='/wp-includes/js/jquery/jquery.min.js' id='jquery-core-js'></script>
             <script type='text/javascript' src='/wp-content/themes/astrid-child/js/rellax/rellax.min.js' id='astrid-child-parallaxscripts-js'></script>
+            <style type="text/css">
+                {`
+                    .preloader {
+                        background-color: #fff;
+                        position: fixed;
+                        height: 100%;
+                        width: 100%;
+                        top: 0;
+                        left: 0;
+                        z-index: 9999;
+                        -webkit-transition: all 0.5s;
+                        transition: all 0.5s;
+                    }
+                `}
+            </style>
             <script type="text/javascript">
                 {`
                     function appendAsync(src) {
@@ -47,27 +60,13 @@ const Layout = ({ children, seo }) => (
         <Seo seo={seo} />
         <main>
 
-            <div className="preloader" style={{display:"none"}}>
-                <div className="preloader-inner">
-                    <ul>
-                        <li></li>
-                        <li></li>
-                        <li></li>
-                        <li></li>
-                        <li></li>
-                        <li></li>
-                    </ul>
-                </div>
-            </div>
 
-
-            <div id="page" className="site">
                 <a className="skip-link screen-reader-text" href="index.html#content">Skip to content</a>
 
-                <header id="masthead" className="site-header has-video header-scrolled" role="banner">
+                <header id="masthead" className="site-header has-video" role="banner">
                     <div className="container">
                         <div className="site-branding col-md-4 col-sm-6 col-xs-12">
-                            <a href="index.html" className="custom-logo-link" rel="home" aria-current="page"><img
+                            <a href="/" className="custom-logo-link" rel="home" aria-current="page"><img
                                 width="200" height="66" src="/wp-content/uploads/2020/11/cropped-kuesaLogo.png"
                                 className="custom-logo" alt="Kuesa 3D"
                                 srcSet="/wp-content/uploads/2020/11/cropped-kuesaLogo.png 200w, /wp-content/uploads/2020/11/cropped-kuesaLogo-100x33.png 100w"
@@ -98,7 +97,6 @@ const Layout = ({ children, seo }) => (
                         </div>
                     </div>
                 </div>
-            </div>
             <div className="footer-wrapper">
 
 

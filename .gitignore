@@ -2,3 +2,4 @@ yarn.lock
 .cache
 node_modules
 public
+netlifyctl-debug.log
