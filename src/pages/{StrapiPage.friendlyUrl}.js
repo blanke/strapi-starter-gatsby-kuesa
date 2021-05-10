@@ -1,7 +1,10 @@
+import { graphql } from 'gatsby' 
+
 import React from "react"
 import Moment from "react-moment"
 import Layout from "../components/layout"
 import PageIntro from "../components/pageIntro"
+import Reactmarkdown from "react-markdown"
 import "../assets/css/main.css"
 import "../assets/css/astridStyleInline.css"
 
@@ -21,6 +24,22 @@ const Page = ({ data }) => {
     <Layout seo={seo}>
       <PageIntro title={article.title} subtitle={article.description} image={article.image}/>
       <div>
+        <div id="content">
+          {article.content.map((part, i) => {
+            return (
+              <div className="sectionBlock" style={{backgroudColor: "#fff"}}>
+                <div className="sectionContent">
+                  <div class="sectionIntro">
+                    <Reactmarkdown 
+                      source={part.part} 
+                      transformImageUri={uri => uri.startsWith('http') ? uri : `${process.env.IMAGE_BASE_URL}${uri}`}
+                    />
+                  </div>
+                </div>
+              </div>
+            );
+          })}
+        </div>
         <div className="uk-section">
           <div className="uk-container uk-container-small">
 
