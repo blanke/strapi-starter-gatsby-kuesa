@@ -2,19 +2,15 @@ import { graphql } from 'gatsby'
 
 import React from "react"
 import Moment from "react-moment"
-import Layout from "../components/layout"
-import PageIntro from "../components/pageIntro"
-import Part from "../components/part"
-import ArticleGimmick from "../components/articleGimmick"
-import "../assets/css/main.css"
-import "../assets/css/astridStyleInline.css"
+import Layout from "../../components/layout"
+import PageIntro from "../../components/pageIntro"
+import Part from "../../components/part"
+import ArticleGimmick from "../../components/articleGimmick"
+import "../../assets/css/main.css"
+import "../../assets/css/astridStyleInline.css"
 
-const Page = ({ data }) => {
-    const page = data.strapiPage;
-    let article = data.allStrapiArticle.nodes.filter(article => {
-      return article.strapiId === page.content[0].article?.id;
-    });
-    if (article?.length === 1) article = article[0];
+const ArticlePage = ({ data }) => {
+    let article = data.strapiArticle
     const seo = {
       metaTitle: article.title,
       metaDescription: article.description,
@@ -25,7 +21,6 @@ const Page = ({ data }) => {
     <Layout seo={seo}>
       <PageIntro title={article.title} subtitle={article.description} image={article.image}/>
       <div>
-      {article.content &&
         <div id="content">
           {article.content.map((content, i) => {
             if (content.part)
@@ -35,7 +30,6 @@ const Page = ({ data }) => {
             return ``  
           })}
         </div>
-      }
         <div className="uk-section">
           <div className="uk-container uk-container-small">
 
@@ -59,43 +53,28 @@ const Page = ({ data }) => {
 }
 
 export const query = graphql`
-  query PageQuery($friendlyUrl: String!) {
-    strapiPage(friendlyUrl: {eq: $friendlyUrl}) {
-      id
-      parent {
-        id
-      }
-      content {
-        id
-        article {
-          id
+    query ArticlePageQuery($strapiId: Int!) {
+        strapiArticle(strapiId: {eq: $strapiId}) {
+            author {
+                name
+            }
+            content {
+                content
+                headline
+                type
+                position
+                part
+                id
+            }
+            strapiId
+            title
+            description
+            image {
+                publicURL
+            }
+            published_at
         }
-      }
-      strapiId
-    }
-    allStrapiArticle {
-      nodes {
-        author {
-          name
-        }
-        content {
-          content
-          headline
-          type
-          position
-          part
-          id
-        }
-        strapiId
-        title
-        description
-        image {
-          publicURL
-        }
-        published_at
-      }
-    }
-  }
+    }  
 `;
 
-export default Page; 
+export default ArticlePage; 

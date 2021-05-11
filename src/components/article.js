@@ -6,9 +6,9 @@ const Article = ({ article }) => {
     <article id="post-469" className="noBorder post-469 post type-post status-publish format-standard has-post-thumbnail hentry category-blogs category-designers category-development clearfix">
       <header className="entry-header entry-header-blog">
         <h2 className="entry-title">
-          <Link to={`/article/${article.strapiId}`} rel="Bookmark">
+          <a href={`/article/${article.strapiId}`} rel="Bookmark">
             {article.title}
-          </Link>
+          </a>
         </h2>					
         <div className="subtitle">
           <div className="entry-meta noBorder">
@@ -30,17 +30,17 @@ const Article = ({ article }) => {
         <div className="entry-content entry-content-blog">
                 <div className="entry-thumb">
             { article.image?.publicURL &&       
-              <Link to={`/article/${article.strapiId}`}>
+              <a href={`/article/${article.strapiId}`}>
                 <img style={{maxWidth:"520px", maxHeight:"187px"}} src={article.image.publicURL} 
                   className="attachment-astrid-medium-thumb size-astrid-medium-thumb wp-post-image" alt="" loading="lazy" />
-              </Link>
+              </a>
             }              
           </div>
               <div className="entry-summary">
           <p style={{display:"-webkit-box", WebkitLineClamp:"4", WebkitBoxOrient:"vertical", overflow:"hidden"}}>{article.content[0].content}</p>
         </div>
         <div className="read-more clearfix">
-          <Link to={`/article/${article.strapiId}`} className="button post-button readMoreButton">Read more</Link>
+          <a href={`/article/${article.strapiId}`} className="button post-button readMoreButton" partiallyActive={true}>Read more</a>
         </div>
       </div> 
     </article>

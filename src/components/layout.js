@@ -93,7 +93,7 @@ const Layout = ({ children, seo }) => (
                                     {children}
                                     </div>
                                 </article>
-        </main>
+                            </main>
                         </div>
                     </div>
                 </div>
