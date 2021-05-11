@@ -1,18 +1,18 @@
 import React from "react";
 import { graphql, useStaticQuery } from "gatsby";
 import Layout from "../components/layout";
-import ArticlesComponent from "../components/articles";
 import PageIntro from "../components/pageIntro"
 import "../assets/css/main.css";
 import "../assets/css/astridStyleInline.css";
 
 const IndexPage = () => {
   const data = useStaticQuery(query);
+  console.log(data.strapiSite)
 
   return (
     <Layout seo={data.strapiSite.homepage.id}>
-        <PageIntro title={"Posts in Category: " + data.strapiSite.blog_board.name}/>
-        <ArticlesComponent articles={data.allStrapiArticle.edges} />
+        <PageIntro title="KUESA 3D" subtitle="Boost your 3D design-to-code workflow"/>
+        Not implemented yet
     </Layout>
   );
 };
